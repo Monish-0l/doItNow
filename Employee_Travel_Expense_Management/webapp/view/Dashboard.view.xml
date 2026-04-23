@@ -1,0 +1,57 @@
+<mvc:View
+  controllerName="ui5.walkthrough.controller.Dashboard"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:f="sap.f">
+
+  <App id="app">
+    <pages>
+
+      <Page title="Dashboard" class="sapUiContentPadding">
+
+        <content>
+
+          <!-- KPI CARDS -->
+          <f:GridContainer>
+            
+            <GenericTile header="Total Requests">
+              <TileContent>
+                <NumericContent value="{kpi>/total}" />
+              </TileContent>
+            </GenericTile>
+
+            <GenericTile header="Pending">
+              <TileContent>
+                <NumericContent value="{kpi>/pending}" />
+              </TileContent>
+            </GenericTile>
+
+            <GenericTile header="Approved">
+              <TileContent>
+                <NumericContent value="{kpi>/approved}" />
+              </TileContent>
+            </GenericTile>
+
+            <GenericTile header="Rejected">
+              <TileContent>
+                <NumericContent value="{kpi>/rejected}"/>
+              </TileContent>
+            </GenericTile>
+
+          </f:GridContainer>
+
+          <!-- NAVIGATION -->
+          <Toolbar class="sapUiMediumMarginTop">
+            <Button text="Employee" press="onEmployee" type="Emphasized"/>
+            <Button text="Manager" press="onManager"/>
+            <Button text="Finance" press="onFinance"/>
+          </Toolbar>
+
+        </content>
+
+      </Page>
+
+    </pages>
+  </App>
+
+</mvc:View>

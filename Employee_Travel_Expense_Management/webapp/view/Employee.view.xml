@@ -1,0 +1,60 @@
+<mvc:View
+  controllerName="ui5.walkthrough.controller.Employee"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core">
+
+  <Page title="Employee" class="sapUiContentPadding">
+
+    <content>
+
+      <VBox class="formContainer sapUiSmallMargin">
+
+        <Input id="empId" placeholder="Employee ID"/>
+
+        <Select selectedKey="{local>/travelType}">
+          <items>
+            <core:Item key="Domestic" text="Domestic"/>
+            <core:Item key="International" text="International"/>
+          </items>
+        </Select>
+
+        <DatePicker id="startdate" placeholder="Start date"/>
+        <DatePicker id="enddate" placeholder="End date"/>
+
+        <Input id="destination" placeholder="Destination"/>
+
+        <Input id="amount" placeholder="Estimated Amount" type="Number"/>
+
+        <TextArea id="purpose" placeholder="Purpose" value="{local>/purpose}"/>
+
+      
+        <HBox class="sapUiSmallMarginTop">
+          <Button text="Save Draft" press="onSaveDraft"/>
+          <Button text="Submit" type="Emphasized" press="onSubmit" class="sapUiSmallMarginBegin"/>
+        </HBox>
+
+        <!-- LIST -->
+        <List items="{/Requests}" class="sapUiMediumMarginTop">
+
+         <CustomListItem type="Active" press="onEdit">
+
+            <VBox>
+              <Text text="{destination}"/>
+
+              <!-- ✅ FORMATTER USED HERE -->
+              <ObjectStatus
+                text="{path: 'status', formatter: '.formatter.statusText'}"
+                state="{path: 'status', formatter: '.formatter.statusState'}"/>
+            </VBox>
+          </CustomListItem>
+
+        </List>
+
+      </VBox>
+
+    </content>
+
+  </Page>
+
+</mvc:View>

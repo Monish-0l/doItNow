@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>QUnit Tests</title>
+
+  <script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+    id="sap-ui-bootstrap"
+    data-sap-ui-theme="sap_fiori_3"
+    data-sap-ui-resourceroots='{
+      "ui5.walkthrough": "../../"
+    }'>
+  </script>
+
+  <script src="https://code.jquery.com/qunit/qunit-2.19.4.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.19.4.css">
+
+  <script>
+    sap.ui.getCore().attachInit(function () {
+      sap.ui.require([
+        "ui5/walkthrough/test/unit/model/formatter",
+        "ui5/walkthrough/test/unit/controller/Employee.controller"
+      ], function () {
+        QUnit.start();
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+</body>
+</html>

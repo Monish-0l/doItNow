@@ -1,0 +1,45 @@
+<mvc:View
+  controllerName="ui5.walkthrough.controller.Manager"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core">
+
+  <Page title="Manager" class="sapUiContentPadding">
+
+    <content>
+
+      <List id="list" items="{/Requests}" mode="MultiSelect">
+
+        <CustomListItem>
+          <HBox justifyContent="SpaceBetween">
+
+        
+            <VBox>
+            <Text text="{empId}"/>
+              <Text text="{destination}"/>
+              <Text text="{amount}"/>
+
+            
+              <ObjectStatus
+                text="{path: 'status', formatter: '.formatter.statusText'}"
+                state="{path: 'status', formatter: '.formatter.statusState'}"/>
+
+              <Text text="{remarks}"/>
+            </VBox>
+
+        
+            <HBox>
+              <Button text="Approve" press="onApprove"/>
+              <Button text="Reject" press="onReject" class="sapUiSmallMarginBegin"/>
+            </HBox>
+
+          </HBox>
+        </CustomListItem>
+
+      </List>
+
+    </content>
+
+  </Page>
+
+</mvc:View>

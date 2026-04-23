@@ -1,0 +1,25 @@
+{
+  "Requests": [
+    {
+      "empId": "101",
+      "date": "2026-04-01",
+      "amount": "5000",
+      "status": "Pending",
+      "remarks": ""
+    },
+    {
+      "empId": "102",
+      "date": "2026-04-02",
+      "amount": "3000",
+      "status": "Pending",
+      "remarks": ""
+    },
+    {
+      "empId": "103",
+      "date": "2026-04-03",
+      "amount": "7000",
+      "status": "Pending",
+      "remarks": ""
+    }
+  ]
+}

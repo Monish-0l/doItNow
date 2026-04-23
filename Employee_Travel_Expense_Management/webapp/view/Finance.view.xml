@@ -1,0 +1,39 @@
+<mvc:View
+    controllerName="ui5.walkthrough.controller.Finance"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+<Page title="Finance" class="sapUiContentPadding">
+    <VBox class="sapUiSmallMargin">
+
+        <HBox>
+            <DatePicker id="fromDate" placeholder="From Date"/>
+            <DatePicker id="toDate" placeholder="To Date"/>
+            <Input id="empIdFilter" placeholder="Employee ID"/>
+            <Input id="amountFilter" placeholder="Amount"/>
+            <Button text="Search" press="onFilter"/>
+        </HBox>
+
+        <Table id="financeTable" items="{/Requests}">
+            <columns>
+                <Column><Text text="Emp ID"/></Column>
+                <Column><Text text="StartDate"/></Column>
+                <Column><Text text="Amount"/></Column>
+                <Column><Text text="Status"/></Column>
+            </columns>
+
+            <items>
+                <ColumnListItem>
+                    <cells>
+                       
+                        <Text text="{empId}"/>
+                        <Text text="{startdate}"/>
+                        <Text text="{amount}"/>
+                        <Text text="{status}"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+
+    </VBox>
+    </Page>
+</mvc:View>

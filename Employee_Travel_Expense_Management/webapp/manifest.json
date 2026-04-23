@@ -1,0 +1,61 @@
+{
+  "sap.app": {
+    "id": "ui5.walkthrough",
+    "type": "application"
+  },
+
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "ui5.walkthrough.view.Dashboard",
+      "type": "XML"
+    },
+
+    "dependencies": {
+      "libs": {
+        "sap.m": {},
+        "sap.f": {},
+        "sap.ui.core": {},
+       "sap.ui.layout": {} 
+         
+      }
+    },
+
+    "resources": {  
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+
+    "models": {
+      "local": {
+        "type": "sap.ui.model.json.JSONModel"
+      }
+    },
+
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "ui5.walkthrough.view",
+        "controlId": "app",
+        "controlAggregation": "pages"
+      },
+
+      "routes": [
+        { "pattern": "", "name": "dashboard", "target": "dashboard" },
+        { "pattern": "employee", "name": "employee", "target": "employee" },
+        { "pattern": "manager", "name": "manager", "target": "manager" },
+        { "pattern": "finance", "name": "finance", "target": "finance" }
+      ],
+
+      "targets": {
+        "dashboard": { "viewName": "Dashboard" },
+        "employee": { "viewName": "Employee" },
+        "manager": { "viewName": "Manager" },
+        "finance": { "viewName": "Finance" }
+      }
+    }
+  }
+}

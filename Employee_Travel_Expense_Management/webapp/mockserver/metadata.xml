@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+ xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+ <edmx:DataServices m:DataServiceVersion="2.0"
+  xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+
+  <Schema Namespace="local"
+   xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+
+   <EntityType Name="Request">
+    <Key>
+     <PropertyRef Name="empId"/>
+    </Key>
+
+    <Property Name="empId" Type="Edm.String"/>
+    <Property Name="date" Type="Edm.String"/>
+    <Property Name="amount" Type="Edm.String"/>
+    <Property Name="status" Type="Edm.String"/>
+    <Property Name="remarks" Type="Edm.String"/>
+   </EntityType>
+
+   <EntityContainer Name="Container" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="Requests" EntityType="local.Request"/>
+   </EntityContainer>
+
+  </Schema>
+ </edmx:DataServices>
+</edmx:Edmx>

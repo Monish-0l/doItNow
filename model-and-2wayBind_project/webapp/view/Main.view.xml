@@ -1,0 +1,18 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="ui5.walkthrough.controller.Main"
+>
+    <App>
+        <Page title="My First XML View">
+            <content>
+                <Text text="Ronaldo is Goat!" />
+
+                <Button
+                    text="Click Me"
+                    press="onPress"
+                />
+            </content>
+        </Page>
+    </App>
+</mvc:View>

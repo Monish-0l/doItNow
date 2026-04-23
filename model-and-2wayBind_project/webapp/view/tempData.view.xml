@@ -1,0 +1,61 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m" controllerName="ui5.walkthrough.controller.tempData">
+    <App>
+        <Page title="Temp data page">
+            <content>
+
+                <Text text="--------------------------"/>
+
+
+
+                <Table items="{data>/employees}">
+
+                    <columns>
+                        <Column>
+                            <Text text="Name"/>
+                        </Column>
+                        <Column>
+                            <Text text="Country"/>
+                        </Column>
+                    </columns>
+
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{data>name}"/>
+                                <Text text="{data>country}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+
+                </Table>
+                <Text text="--------------------------"/>
+
+
+                <List items="{data>/employees}">
+                    <items>
+                        <CustomListItem>
+                            <VBox>
+
+                                <Input value="{data>name}" placeholder="Name"/>
+                                <Input value="{data>country}" placeholder="Country"/>
+
+                                <Text text="{data>name}" />
+                                <Text text="{data>country}" />
+
+                                <Text text="------------------"/>
+
+                            </VBox>
+                        </CustomListItem>
+                    </items>
+                </List>
+
+
+
+            </content>
+        </Page>
+    </App>
+</mvc:View>
+
+
+
